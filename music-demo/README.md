@@ -22,3 +22,9 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+移动端适配下载插件
+```
+yarn add postcss@8.2.13 postcss-pxtorem@5.1.1
+```

@@ -1,15 +1,20 @@
 <template>
-    <div>
-<van-nav-bar :title="activeTitle"/>
-
-      <!-- 二级路由-挂载点 -->
-        <router-view></router-view>
-        <van-tabbar route>
-  <van-tabbar-item icon="home-o" replace to="/layout/home">首页</van-tabbar-item>
-  <van-tabbar-item icon="search" replace to="/layout/search">搜索</van-tabbar-item>
-
-</van-tabbar>
-    </div>
+  <div>
+    <van-nav-bar :title="activeTitle" fixed/>
+<div class="main">
+  <!-- 二级路由-挂载点 -->
+    <router-view></router-view>
+</div>
+    
+    <van-tabbar route>
+      <van-tabbar-item icon="home-o" replace to="/layout/home"
+        >首页</van-tabbar-item
+      >
+      <van-tabbar-item icon="search" replace to="/layout/search"
+        >搜索</van-tabbar-item
+      >
+    </van-tabbar>
+  </div>
 </template>
 <script>
 export default {
@@ -24,11 +29,10 @@ export default {
       this.activeTitle = this.$route.meta.title; // 提取切换后路由信息对象里的title显示
     },
   },
-    
-}
+};
 </script>
 <style >
-    /* 中间内容区域 - 容器样式(留好上下导航所占位置) */
+/* 中间内容区域 - 容器样式(留好上下导航所占位置) */
 .main {
   padding-top: 46px;
   padding-bottom: 50px;
